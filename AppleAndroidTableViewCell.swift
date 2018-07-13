@@ -7,9 +7,10 @@
 //
 
 import UIKit
-
-class AppleAndroidTableViewCell: UITableViewCell {
-
+import Reusable
+class AppleAndroidTableViewCell: UITableViewCell, NibReusable {
+    
+    
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var appleAndroid2: UIImageView!
     @IBOutlet weak var appleAndroid: UIImageView!

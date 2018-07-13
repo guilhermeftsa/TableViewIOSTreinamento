@@ -16,6 +16,7 @@ class ViewController: UIViewController {
         self.tableViewEx?.dataSource = self
         self.tableViewEx?.delegate = self
         self.tableViewEx?.register(UINib(nibName: "AppleAndroidTableViewCell", bundle: nil), forCellReuseIdentifier: "cellApple")
+        self.tableViewEx.register(cellType: AppleAndroidTableViewCell.self)
     }
 }
 
@@ -32,7 +33,7 @@ class ViewController: UIViewController {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellApple", for: indexPath) as! AppleAndroidTableViewCell
+        let cell = tableView.dequeueReusableCell(for: indexPath) as AppleAndroidTableViewCell
         cell.backgroundColor = .brown
         cell.labelNumeroRow.text = ">     \(indexPath.row)   X"
         return cell
